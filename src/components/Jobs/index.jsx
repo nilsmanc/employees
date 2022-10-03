@@ -1,13 +1,15 @@
-import { apiActions } from 'modules/api/actions'
-import api from 'modules/api/api'
+import useFetch from 'hooks/useFetch'
 import { JOBS } from 'modules/api/endpoints'
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 
 export const Jobs = () => {
-  const state = useSelector((state) => state.api[JOBS])
+  const { response, performFetch } = useFetch(JOBS)
 
-  console.log(state)
+  useEffect(() => {
+    performFetch()
+  }, [performFetch])
+
+  console.log(response)
 
   return <div>Jobs Component</div>
 }
