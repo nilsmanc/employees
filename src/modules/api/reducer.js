@@ -1,6 +1,6 @@
 import camelCase from 'camelcase'
+import ENDPOINTS from 'modules/api/endpoints'
 import { API_ACTIONS } from './actions'
-import ENDPOINTS from './endpoints'
 
 function initApiState() {
   return Object.keys(ENDPOINTS).reduce((acc, next) => {

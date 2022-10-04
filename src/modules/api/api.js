@@ -8,11 +8,12 @@ class Api {
     this.endpoints = endpoints
   }
 
-  generateRequest(endpoint, data) {
+  async generateRequest(endpoint, data) {
     const { method, uri } = this.endpoints[endpoint]
 
     return fetch(`${this.baseUrl}${uri}`, { method, body: data })
   }
+
   async fetch(endpoint, data) {
     const response = await this.generateRequest(endpoint, data)
 
