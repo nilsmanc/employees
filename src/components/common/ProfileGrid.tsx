@@ -23,7 +23,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function ProfileGrid({ profiles = [], loading }) {
+type ProfileGridProps = {
+  profiles: []
+  loading: boolean
+}
+
+export const ProfileGrid: React.FC<ProfileGridProps> = ({ profiles = [], loading }) => {
   const classes = useStyles()
 
   if (loading || !profiles) {

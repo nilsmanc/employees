@@ -5,7 +5,7 @@ import ProfileGrid from 'components/common/ProfileGrid'
 import { useSelector } from 'react-redux'
 import { selectAppState } from 'modules/app/selectors'
 
-export default function Employees() {
+export const Employees = () => {
   const { response, performFetch } = useFetch(EMPLOYEES)
   const { loading, data } = response
   const appState = useSelector(selectAppState)

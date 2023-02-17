@@ -4,7 +4,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import { apiActions } from 'modules/api/actions'
 import { selectApiState } from 'modules/api/selectors'
 
-const useFetch = (endpoint) => {
+const useFetch = (endpoint: string) => {
   const dispatch = useDispatch()
   const apiState = useSelector(selectApiState, shallowEqual)
 

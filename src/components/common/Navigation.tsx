@@ -39,7 +39,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Navigation({ loading, services, title = '' }) {
+type Service = {
+  id: number
+  jobId: number
+  title: string
+}
+
+type NavigationProps = {
+  loading: boolean
+  services: Service[]
+  title: string
+}
+
+export const Navigation: React.FC<NavigationProps> = ({ loading, services, title = '' }) => {
   const classes = useStyles()
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const handleDrawerToggle = useCallback(() => {
@@ -57,7 +69,7 @@ export default function Navigation({ loading, services, title = '' }) {
         ) : (
           services
             .filter((service) => service.id < 25)
-            .map(({ id, jobId, title }) => <ServiceItem key={id} jobId={jobId} title={title} />)
+            .map(({ id, jobId, title }) => <ServiceItem id={id} jobId={jobId} title={title} />)
         )}
       </List>
       <Divider />

@@ -3,7 +3,7 @@ import { JOBS } from 'modules/api/endpoints'
 import Navigation from 'components/common/Navigation'
 import useFetch from 'hooks/useFetch'
 
-export default function Jobs() {
+export const Jobs = () => {
   const { response, performFetch } = useFetch(JOBS)
   const { loading, data } = response
 

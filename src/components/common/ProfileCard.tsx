@@ -18,7 +18,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function ProfileCard({ title, subSpecialties }) {
+type ProfileCardProps = {
+  title: string
+  subSpecialties: []
+}
+
+export const ProfileCard: React.FC<ProfileCardProps> = ({ title, subSpecialties }) => {
   const classes = useStyles()
 
   return (
