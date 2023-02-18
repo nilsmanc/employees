@@ -10,7 +10,7 @@ const useFetch = (endpoint: string) => {
   const apiState = useSelector(selectApiState, shallowEqual)
 
   const performFetch = useCallback(
-    (data) => dispatch(apiActions.fetch(endpoint, data)),
+    (data?) => dispatch(apiActions.fetch(endpoint, data)),
     [endpoint, dispatch],
   )
   const response = useMemo(() => apiState[camelCase(endpoint)], [apiState, endpoint])

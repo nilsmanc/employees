@@ -24,6 +24,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+type Profile = {
+  avatar: string
+  name: string
+  job: string
+  id: number
+}
+
 type ProfileGridProps = {
   profiles: []
   loading: boolean
@@ -42,7 +49,7 @@ const ProfileGrid: React.FC<ProfileGridProps> = ({ profiles = [], loading }) => 
 
   return (
     <div className={classes.root}>
-      {profiles.map((profile) => (
+      {profiles.map((profile: Profile) => (
         <div key={profile.id} className={classes.item}>
           <ProfileCard src={profile.avatar} title={profile.name} subSpecialties={profile.job} />
         </div>

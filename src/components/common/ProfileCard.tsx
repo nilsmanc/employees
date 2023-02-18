@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
 
 type ProfileCardProps = {
   title: string
-  subSpecialties: []
+  subSpecialties: string
+  src: string
 }
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ title, subSpecialties }) => {

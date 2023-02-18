@@ -5,15 +5,15 @@ export const API_ACTIONS = {
 }
 
 export const apiActions = {
-  fetch: (endpoint, payload) => ({
+  fetch: (endpoint: string, payload) => ({
     type: `${API_ACTIONS.FETCH_START}${endpoint.toUpperCase()}`,
     payload,
   }),
-  fetchSuccess: (endpoint, payload) => ({
+  fetchSuccess: (endpoint: string, payload) => ({
     type: `${API_ACTIONS.FETCH_SUCCESS}${endpoint.toUpperCase()}`,
     payload,
   }),
-  fetchFailure: (endpoint, payload) => ({
+  fetchFailure: (endpoint: string, payload) => ({
     type: `${API_ACTIONS.FETCH_FAILURE}${endpoint.toUpperCase()}`,
     payload,
   }),
