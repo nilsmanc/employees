@@ -1,8 +1,9 @@
 import { useCallback, useMemo } from 'react'
 import camelCase from 'camelcase'
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'
-import { apiActions } from 'modules/api/actions'
-import { selectApiState } from 'modules/api/selectors'
+
+import { apiActions } from '../modules/api/actions'
+import { selectApiState } from '../modules/api/selectors'
 
 const useFetch = (endpoint: string) => {
   const dispatch = useDispatch()

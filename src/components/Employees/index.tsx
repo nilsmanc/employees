@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo } from 'react'
-import { EMPLOYEES } from 'modules/api/endpoints'
-import useFetch from 'hooks/useFetch'
-import ProfileGrid from 'components/common/ProfileGrid'
 import { useSelector } from 'react-redux'
-import { selectAppState } from 'modules/app/selectors'
 
-export const Employees = () => {
+import { EMPLOYEES } from '../../modules/api/endpoints'
+import useFetch from '../../hooks/useFetch'
+import ProfileGrid from '../common/ProfileGrid'
+import { selectAppState } from '../../modules/app/selectors'
+
+const Employees = () => {
   const { response, performFetch } = useFetch(EMPLOYEES)
   const { loading, data } = response
   const appState = useSelector(selectAppState)
@@ -28,3 +29,5 @@ export const Employees = () => {
 
   return <ProfileGrid profiles={preparedData} loading={loading} />
 }
+
+export default Employees

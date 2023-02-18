@@ -23,7 +23,7 @@ type ProfileCardProps = {
   subSpecialties: []
 }
 
-export const ProfileCard: React.FC<ProfileCardProps> = ({ title, subSpecialties }) => {
+const ProfileCard: React.FC<ProfileCardProps> = ({ title, subSpecialties }) => {
   const classes = useStyles()
 
   return (
@@ -52,3 +52,5 @@ ProfileCard.propTypes = {
   title: PropTypes.string.isRequired,
   subSpecialties: PropTypes.string,
 }
+
+export default ProfileCard

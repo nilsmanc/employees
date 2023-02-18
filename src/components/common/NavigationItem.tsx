@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import { filterEmployees } from 'modules/app/actions'
-import { selectAppState } from 'modules/app/selectors'
-import { useDispatch, useSelector } from 'react-redux'
+
+import { filterEmployees } from '../../modules/app/actions'
+import { selectAppState } from '../../modules/app/selectors'
 
 type NavigationItemProps = {
   id: number
@@ -11,7 +12,7 @@ type NavigationItemProps = {
   title: string
 }
 
-export const NavigationItem: React.FC<NavigationItemProps> = ({ id, jobId, title }) => {
+const NavigationItem: React.FC<NavigationItemProps> = ({ id, jobId, title }) => {
   const dispatch = useDispatch()
   const appState = useSelector(selectAppState)
   const action = useCallback(() => {
@@ -24,3 +25,5 @@ export const NavigationItem: React.FC<NavigationItemProps> = ({ id, jobId, title
     </ListItem>
   )
 }
+
+export default NavigationItem

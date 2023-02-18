@@ -1,7 +1,8 @@
 import React from 'react'
-import Employees from 'components/Employees'
-import Jobs from 'components/Jobs'
 import { makeStyles } from '@material-ui/core/styles'
+
+import Employees from './components/Employees'
+import Jobs from './components/Jobs'
 
 const useStyles = makeStyles((theme) => ({
   root: {

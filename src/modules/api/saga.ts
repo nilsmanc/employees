@@ -1,6 +1,7 @@
 import { takeEvery, put, all } from 'redux-saga/effects'
-import api from 'modules/api/api'
-import { apiActions, API_ACTIONS } from 'modules/api/actions'
+
+import api from '../../modules/api/api'
+import { apiActions, API_ACTIONS } from '../../modules/api/actions'
 
 export function* onApiLoad({ payload, type }) {
   const actionType = type.replace(API_ACTIONS.FETCH_START, '').toLowerCase()

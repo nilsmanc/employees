@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { JOBS } from 'modules/api/endpoints'
-import Navigation from 'components/common/Navigation'
-import useFetch from 'hooks/useFetch'
 
-export const Jobs = () => {
+import { JOBS } from '../../modules/api/endpoints'
+import Navigation from '../common/Navigation'
+import useFetch from '../../hooks/useFetch'
+
+const Jobs = () => {
   const { response, performFetch } = useFetch(JOBS)
   const { loading, data } = response
 
@@ -13,3 +14,5 @@ export const Jobs = () => {
 
   return <Navigation loading={loading} services={data} title={'Employees'} />
 }
+
+export default Jobs

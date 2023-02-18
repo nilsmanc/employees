@@ -1,8 +1,9 @@
 import React from 'react'
-import ProfileCard from './ProfileCard'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Grid from '@material-ui/core/Grid'
+
+import ProfileCard from './ProfileCard'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +29,7 @@ type ProfileGridProps = {
   loading: boolean
 }
 
-export const ProfileGrid: React.FC<ProfileGridProps> = ({ profiles = [], loading }) => {
+const ProfileGrid: React.FC<ProfileGridProps> = ({ profiles = [], loading }) => {
   const classes = useStyles()
 
   if (loading || !profiles) {
@@ -49,3 +50,5 @@ export const ProfileGrid: React.FC<ProfileGridProps> = ({ profiles = [], loading
     </div>
   )
 }
+
+export default ProfileGrid
