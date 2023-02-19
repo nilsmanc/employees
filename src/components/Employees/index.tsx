@@ -27,7 +27,7 @@ const Employees = () => {
     return data.filter((employee) => employee.job === appState.selectedJob)
   }, [data, appState.selectedJob])
 
-  return <ProfileGrid profiles={preparedData} loading={loading} />
+  return <ProfileGrid profiles={preparedData as []} loading={loading} />
 }
 
 export default Employees
