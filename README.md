@@ -1,5 +1,5 @@
 ### Technologies
 
-ReactJS, Redux, Redux Saga, Material UI
+ReactJS, Typescript, Redux, Redux Saga, Material UI
 
 ![first](/public/employees.png)
